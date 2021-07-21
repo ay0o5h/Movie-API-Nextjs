@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Ramabhadra&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family:'Ramabhadra', sans-serif;
+}
+body {
+  background-color: #020916;
+  
+}
+.container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+// navbar 
+nav {
+  height:90px;
+  background-color: #182131;
+  .searchContainer {
+    .search {
+      background-color: #2B3442;
+      width:300px;
+      height:46px;
+      border-radius: 40px;
+      border: 0;
+      outline: none;
+      border-radius: 40px;
+      padding: 0 30px;
+      font: size 18px;
+      color:#ffffff;
+      z-index: 1;
+    }
+    .searchIcon {   
+   color:rgba(255, 255, 255,.4);
+   font-size:25px;
+   padding: 10px 0;
+   position:absolute;
+   right:10%;
+   z-index: 2;
+    }
+  }
+}
+// slider 
+.Carousel {
+  position: relative;
+  overflow: hidden;
+  .cover {
+    filter: brightness(0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    animation: coverAnimation 10s infinite;
+  }
+  @keyframes coverAnimation {
+    0% {
+              transform: scale(1);
+    }
+    25% {  
+              transform: scale(1.1);
+    }
+    50% {   
+              transform: scale(1.05);
+    }
+    100% {
+              transform: scale(1);
+    }
+  }
+  .content {
+    margin-top: -40%;
+    h2 {
+      color: #ffffff;
+      font-size: 60px;
+      margin: 0;
+    }
+    span {
+      color: #FFBA00;
+      font-size:25px;
+    }
+    p {
+      color: #ffffff;
+      font-size: 25px;
+    }
+  }
+  h3 {
+    color: #FFBA00;
+    font-size:22px;
+    margin-top: -10%;
+  z-index: 9999;
+  }
+}
+// responsive of slider
+@media screen and (max-width: 500px) {
+  .Carousel {
+    .content {
+      margin-top: -40%;
+      margin-left: 10%;
+      h2 {
+        font-size: 25px;
+      }
+      span , p{
+        font-size:20px;
+      }   
+    }
+    h3 {
+      font-size:15px;
+      margin-right: 10%; 
+    }
+  }
+}
+// Top Rated
+.cardPlace {
+  padding-left: 10%;
+  padding-right: 2%;
+  h2 {
+    color: #fff;
+    font-weight: 500;
+    margin: 5% 0;
+    font-size: 30px;
+  }
+.cards {
+  width:100%;
+  display: flex;
+  flex-direction:row;
+  overflow:scroll; 
+  gap: 2rem; 
+  list-style-type: none;
+  .card {
+    position: relative;
+    display: inline-block;
+    height: 376px;
+    width: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    .card__image {
+      width: 100%;
+      height: 400px;
+    }
+    .title {
+      position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    border-radius: calc(40* 1px);
+    background-color: #151F2E;
+    transform: translateY(100%);
+    transition: .2s ease-in-out;
+    h3 {
+    position: relative;
+    padding: 1em;
+    text-align: left;
+    border-radius: 0px 0px 20px 20px;
+    background-color: #34425c;
+    color:white;
+    transform: translateY(-100%);
+    transition: .2s ease-in-out;
+  }
+  }
+  .card__header {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2em;
+    border-radius: 0 0 20px 20px;
+    background-color: rgba(51, 65, 91,.8);
+    height:100%;
+    transform: translateY(0%);
+    overflow: auto;
+    transition: .2s ease-in-out;
+    .card__description {
+      color: #fff;
+       font-family: "MockFlowFont";
+     }
+  }
+  &:hover {
+    .card__header {
+      transform: translateY(-100%);
+  }
+  }
+  }
+}
+}
+
+
